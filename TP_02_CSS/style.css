@@ -1,0 +1,75 @@
+body {
+  font-family : georgia , verdana;
+  font-size : 12px;
+  line-height : 2;
+  color : #555753;
+  background-color : #CDCDCD;
+}
+
+p {
+  text-align : justify;
+}
+
+h3 {
+  font-style : italic;
+  font-size : 18px;
+  font-style : arial;
+  letter-spacing : 1px;
+  color : #8B0000;
+}
+
+a {
+  font-weight : bold;
+  color : #00008B;
+  text-decoration : none;
+}
+
+#contenant {
+  width : 840px;
+  border : 1px solid black;
+  background-color : white;
+  margin : auto auto auto auto;
+  
+}
+
+header {
+  background-image: url("images/ujm.jpeg");
+  Background-repeat : no-repeat;
+  background-position : center;
+  height : 110px;
+  width : 750px;
+  text-align : right;
+  padding : 30px, 60px;
+}
+
+#texte {
+  width : 650px;
+  height : 650px;
+  padding : 20px;
+}
+
+nav {
+  font-family : verdana;
+  font-size : 10px;
+  background-color : #B7B7B7;
+  width : 130px;
+  height : 690px;
+  padding : 10px;
+  float : right;
+}
+
+ul {
+  list-style-type : circle;
+}
+
+footer {
+  text-align : center;
+  width : 840px;
+  height : 50px;
+  background-color : #B7B7B7;
+  margin-top : 20px;
+}
+
+footer a {
+  padding : 30px;
+}
