@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<title>td3</title>
+    <meta charset : "utf-8" />
+    <script type="text/javascript">
+
+      function completerFormulaire() {
+        var i,j;
+        for (i=0;i<31;i++) {
+          document.getElementById('birth_d').options[i] = new Option(i+1,i+1);
+        }
+
+        var mois = new Array("janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre");
+        for (i=0;i<mois.length;i++) {
+          document.getElementById('birth_m').options[i] = new Option(mois[i]);
+        }
+        for (j=1950;j<2001;j++) {
+          document.getElementById('birth_y').options[j-1950] = new Option(j,j);
+        }
+      }
+
+      function estNombre(valeur) {
+			 var i,c;
+			 for (var i = 0; i < valeur.length; i++) {
+				  c = valeur.charAt(i);
+				  if (c < '0' || c > '9') {
+					return false;
+				}
+			}
+			return true;
+    }
+
+		  function verifierCodePostal(cp) {
+        cp = document.getElementById('cp');
+        if(!estNombre(cp) || cp.length!=5) {
+          alert("Ce n'est pas un code postal fils de pute !");
+          return false;
+        }
+        return true;
+      }
+
+      function verifierDateNaissance(jour,mois,annee) {
+        var j = jour.options[birth_d.selectedIndex].value;
+        var m = mois.options[birth_m.selectedIndex].value;
+        var a = annee.options[birth_y.selectedIndex].value;
+
+        var Date = new Date(a,m,j);
+
+        if (date.getDate() != j || date.getDate() != m || date.getFullYear() != a) {
+          alert("Vous avez entrez une date incorrecte : le "+j+" "+(parseInt(m)+1)+" "+a+" n'existe pas");
+          return false;
+        }
+        return true;
+      }
+
+      function verifierAdresse(adresse) {
+        var tab = adresse.split(" ");
+        if (tab.length < 2) {
+          alert("L4adresse indiquée est éronnée pouilleux");
+          return false;
+        }
+        return true;
+      }
+
+      function verifierBac(naissance,bac) {
+        var an = naissance.options[naissance.selectedIndex].value;
+        var ab = parseInt(bac);
+
+        if (bac.length != 4) {
+          alert(bac + "n'est pas une année valide trou d'cul");
+          return false;
+        }
+
+        if (ab < an) {
+          alert("La date d'obtention du bac n'est pas bonne connard !");
+          return false;
+        }
+
+        if (an-ab < 15) {
+          return confirm("Avez-vous vraiment obtenu votre bac avant vos 15 sur-doué ?");
+        }
+        return true;
+      }
+        
+	</script>
+	</head>
+
+  <body onload="completerFormulaire()">
+  	<h1>Renseignements</h1>
+  	<form id="form1" action="" onsubmit="verifierDonnees()">
+  		<fieldset>
+  			<!--CIVILITE-->
+  			<legend><strong>Civilité</strong></legend>
+  			<input type="radio" name="civilite" value="mme" id="mme">Madame
+  			<input type="radio" name="civilite" value="mr" id="mr">Monsieur<br>
+  			<label for="nom">Nom</label><input type="text" name="nom">
+  			<label for="prenom">Prénom</label><input type="text" name="prenom"><br>
+
+  			<!--DATE DE NAISSANCE-->
+  			<label for="birthdate">Date de naissance</label>
+  			<select name=birth_d id="birth_d"></select>
+  			<select name="birth_m" id="birth_m"></select>
+  			<select name="birth_y" id="birth_y"></select><br>
+
+  			<label for="passwd">Mot de passe</label><input type="password"/>
+  		</fieldset>
+
+  		<!--CONTACT-->
+  		<fieldset>
+  			<legend><strong>Contact</strong></legend>
+  			<label for="adress">Adresse</label><textarea rows="2" cols="50"></textarea><br>
+  			<label for="cp">Code postal</label><input type="tex" name="code_postal" maxlength="5" id="cp">
+  			<label for="city">Ville</label><input type="text" name="ville"><br>
+  			<label for="mail">Adresse email</label><input type="email" name="mail">
+  		</fieldset>
+
+  		<!--DIPLOMES-->
+  		<fieldset>
+  			<legend><strong>Diplômes</strong></legend>
+  			<label for="bac">Année d'obtention du bac</label><input type="text" name="bac" maxlength="4"><br>
+  			<label for="fic_bac">Fichier scanné du bac</label><input type="file" name="fichier_bac" accept=".pdf" ><br>
+  			<label for="diplomes">Diplômes obtenus</label><input type="checkbox" name="license" value="license" id="license">License
+  			<input type="checkbox" name="master" value="master" id="master">Master<br>
+  			<label for="last_diplome">Année d'obtention du dernier diplôme</label><input type="text" name="last_diplome" maxlength="4">
+  		</fieldset>
+  		<input type="submit" name="soumettre" value="Soumettre">
+  		<input type="submit" name="effacer" value="Effacer">
+  </form>
+  </body>
+  </html>

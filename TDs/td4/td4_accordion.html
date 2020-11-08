@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+  <head>
+    <meta charset="utf-8" />
+    <title>Accordion</title>
+    <style>
+      div.accordion {
+        background-color: #eee;
+        cursor: pointer; /* comme un lien */
+        padding: 20px;
+        /* transition: 0.4s; la couleur de fond change progressivement quand hover */
+      }
+      div.accordion:hover {
+        background-color: #ddd;
+      }
+      div.panel {
+        display: none;
+      }
+    </style>
+    <script>
+      function accordion(partie){
+        var i;
+        //on rend tout invisible
+        var elts = document.querySelectorAll('div.panel');
+        for(i=0;i<elts.length;i++){
+          elts[i].style.display = 'none';
+        }
+        //on rend visible celui cliqué
+        document.getElementById(partie).style.display = 'initial';
+      }
+    </script>
+  </head>  
+  <body>
+    <div class="accordion" onclick="accordion('div-1')">Partie 1</div>
+    <div class="panel" id="div-1">
+      <p>Contenu de la partie 1</p>
+    </div>
+    <div class="accordion" onclick="accordion('div-2')">Partie 2</div>
+    <div class="panel" id="div-2">
+      <p>Contenu de la partie 2</p>
+    </div>
+    <div class="accordion" onclick="accordion('div-3')">Partie 3</div>
+    <div class="panel" id="div-3">
+      <p>Contenu de la partie 3</p>
+    </div>
+  </body>  
+</html>

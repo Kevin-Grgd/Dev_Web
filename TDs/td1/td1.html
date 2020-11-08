@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset : "utf-8" />
+	<title>Mise en forme</title>
+  </head>
+  
+  <body>
+   <h1>Wikipedia</h1>
+   <hr/>
+   <h2>Présentation</h2>
+   <p> Wikipédia est un projet d'<strong>encyclopédie collective</strong> établie sur Internet, universelle, multilingue.<br> Actuellement, Wikipédia en français compte plus de quatre mille articles.</p>
+   <h2>Participation</h2>
+   <p>Chacun peut publier immédiatement du contenu en ligne, à condition de <em>respecter les règles</em> essentielles établies par la communauté.</p>
+   <hr/>
+   <h2>Images</h2>
+   <h3>Image seule</h3>
+   <img src = "images/oiseau.jpg" alt = "oiseau sur une branche" title = "Oiseau à dos rouge" height = "200"/>
+   <h3>Image(s) avec légende</h3>
+   <figure>
+     <img src = "images/renard.jpg" alt = "renard dans un champ" title = "Renard roux" width = "300"/>
+     <figcaption>Renard roux dans un champ</figcaption>
+   </figure>
+   <hr/>
+   <h2>Liens</h2>
+   <h3>Liens externes et internes au site</h3>
+
+   <!--index.html-->
+   <!--<a href = "Loisirs/cinema.html">cinéma</a>-->
+  
+   <!--cinema.html-->
+   <!--<a href = "sport.html"> <img src = images/tennis.jpg" alt="tennis"></a>-->
+
+   <a href = "http://allocine.fr">Allociné</a>
+
+   <!--sport.html-->
+  <!-- <a href = "../index.html">Accueil</a>-->
+
+  <h3>Liens internes à une page</h3>
+  <h1 id = "sommaire" > Sommaire</h1>
+  <a href="#comedie" > Films de comédie</a> <br />
+  <a href="#action"> Film d'actions</a>
+
+  <h2 id ="comédie" > Films de comédie</h2>
+  <ul>
+    <li>ha ha</li>
+  </ul>
+
+  <h2 id="action" > Film d'action</h2>
+  <ul>
+    <li>aaaah</li>
+  </ul>
+  <a href="#sommaire">Retour au sommaire</a>
+
+  </body>
+</html>

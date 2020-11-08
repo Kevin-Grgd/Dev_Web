@@ -1,0 +1,51 @@
+#cadre1{
+    border : solid 2px red;
+    background : yellow;
+    margin : 70 px;
+}
+
+#cadre1 p{
+    padding: 30px 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td{
+    border : solid 2px black;
+    width : 50px;
+    height : 50px;
+    
+}
+
+td:hover{
+    width: 200px;
+    height: 200px;
+    transition-duration: 2s;
+    font-size : 3em;
+}
+
+.jaune {
+    background : yellow;
+}
+
+.bleu {
+    background-color: blue;
+}
+
+.rouge {
+    background-color: red;
+    color : white;
+    text-align: center;
+}
+
+.noir {
+    background-color: black;
+}
+
+.gris {
+    background-color: grey;
+}

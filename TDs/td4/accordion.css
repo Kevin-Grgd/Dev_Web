@@ -1,0 +1,13 @@
+div.accordion{
+
+	background-color: #EEEEEE;
+	cursor: pointer;
+	padding: 20px;
+}
+div.accordion:hover {
+	background-color: #DDDDDD;
+}
+
+.panel{
+	display: none;
+}

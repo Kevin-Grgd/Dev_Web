@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<title>td4</title>
+    <meta charset : "utf-8" />
+    <script type="text/javascript">
+    	
+    	function ajouterCouleur() {
+    		var ligne = document.getElementById('tableau').insertRow(-1);
+    		var couleur = ligne.insertCell(0);
+    		var code = ligne.insertCell(1);
+    		var rendu = ligne.insertCell(2);
+
+    		couleur.innerHTML = document.getElementById('couleur').value;
+    		code.innerHTML = document.getElementById('code').value;
+    		rendu.style.backgroundColor = document.getElementById('code').value;
+    	}
+
+    	function modifierCouleur() {
+    		var num_ligne = parseInt(document.getElementById('ligne_modif').value);
+    		var ligne = document.getElementById('tableau').rows[num_ligne].cells ;
+
+    		ligne[0].innerHTML = document.getElementById('couleur_modif').value;
+    		ligne[1].innerHTML = document.getElementById('code_modif').value;
+    		ligne[2].style.backgroundColor = document.getElementById('code_modif').value;
+    	}
+
+    	function supprimerCouleur() {
+    		var num_ligne = parseInt(document.getElementById('ligne_supp').value);
+    		var ligne = document.getElementById('tableau').deleteRow(num_ligne);
+    	}
+    </script>
+</head>
+
+<body>
+	<!-- AJOUT COULEUR -->
+	<form>
+		<fieldset>
+			<legend>Ajouter une couleur</legend>
+			<label>Couleur </label><input type="text" id="couleur"><br>
+			<label>Code </label><input type="color" id="code"><br>
+			<input type="button" onclick="ajouterCouleur()" value="Ajouter">
+	</fieldset>
+	</form>
+	<br>
+
+	<!-- MODIF COULEUR -->
+	<form>
+		<fieldset>
+			<legend>Modfier une couleur</legend>
+			<label>Ligne </label><input type="text" id="ligne_modif"><br>
+			<label>Couleur </label><input type="text" id="couleur_modif"><br>
+			<label>Code </label><input type="color" id="code_modif"><br>
+			<input type="button" onclick="modifierCouleur()" value="Modifier">
+		</fieldset>
+	</form>
+
+	<!-- SUPPRIMER LIGNE -->
+		<form>
+		<fieldset>
+			<legend>Supprimer une ligne</legend>
+			<label>Ligne </label><input type="text" id="ligne_supp"><br>
+			<input type="button" onclick="supprimerCouleur()" value="Supprimer">
+		</fieldset>
+	</form>
+
+	<table id="tableau">
+		<tr>
+			<th>Couleur</th>
+			<th>Code</th>
+			<th>Rendu</th>
+		</tr>
+	</table>
+</body>
+</html>
