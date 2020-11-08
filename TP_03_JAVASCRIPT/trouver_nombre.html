@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Trouver nombre</title>
+    <script type="text/javascript" src="trouver_nombre.js"></script>
+  </head>
+
+  <body>
+    <h1>Trouver le nombre</h1>
+
+    <form id="form1">
+      <label>Rechercher un nombre entre : </label>
+      <input type="text" id="borne_min" required maxlength="5"/> et :
+      <input type="text" id="borne_max" required maxlength="5"/>
+      <input type="button" value="Choisir" onclick="choisirNombre()"/><br>
+      <input type="text" id="proposition" required maxlength="5"/>
+      <input type="button" value="Proposer" onclick="verifierNombre()"/><br>
+      <input type="text" placeholder="Aide" id="aide"/>
+    </form>
+
+  </body>
+</html>
